@@ -35,3 +35,14 @@ PRODUCT_NAME := twrp_violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
 PRODUCT_MANUFACTURER := Xiaomi
+
+# Recovery
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libion \
+    libxml2 \
+    libicuuc
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libicuuc.so
