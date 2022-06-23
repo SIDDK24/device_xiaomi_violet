@@ -22,3 +22,10 @@ LOCAL_PATH := device/xiaomi/violet
 PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
+
+# Boot Hal 1.2
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2.system
+
+PRODUCT_COPY_FILES += \
+    $(OUT_DIR)/target/product/violet/system/lib64/android.hardware.boot@1.2.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/android.hardware.boot@1.2.so
