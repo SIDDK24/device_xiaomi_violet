@@ -23,13 +23,19 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
-# Boot Hal 1.2
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2.system
-
-PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/violet/system/lib64/android.hardware.boot@1.2.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/android.hardware.boot@1.2.so
-
 # Keystore
 PRODUCT_PACKAGES += \
     android.system.keystore2
+
+# Recovery Modules
+TARGET_RECOVERY_DEVICE_MODULES += \
+	libion \
+	android.hardware.boot@1.2 \
+    libxml2 \
+    libicuuc
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.2.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
+	$(TARGET_OUT_SHARED_LIBRARIES)/libicuuc.so

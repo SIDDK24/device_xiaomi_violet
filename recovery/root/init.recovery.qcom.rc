@@ -24,6 +24,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+import /init.recovery.qcom_decrypt.rc
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -31,8 +32,4 @@ on fs
 
 on boot
     setprop sys.usb.config adb
-
-on init
-    setprop prepdecrypt.loglevel 2
-
-import /init.recovery.qcom_decrypt.rc
+	start health-hal-2-1
